@@ -24,5 +24,22 @@ html
 			<button type="button" id="btnclear">Clear</button>
 		</p>
 		
+		<input type = "text" id="txtResult" autofocus></input
+		
 	</body>
 </html>
+
+window.addEventListener("load", addListener);
+var sum = "";
+function addListener()
+{
+	document.getElementByID("btnnumone").addEventListener("click",ButtonOne);
+	document.getElementByID("btnnumtwo").addEventListener("click",ButtonTwo);
+}
+function Addition()
+{
+	var numone = document.getElementByID("txtnumone").value;
+	var numtwo = document.getElementByID("txtnumtwo").value;
+	sum = parseInt(numone) + parseInt(numtwo);
+	document.getElementByID("lblanswer").textContent = sum;
+}
