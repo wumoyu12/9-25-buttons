@@ -1,0 +1,28 @@
+html
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Activity - Buttons</title>
+		<link rel="sutelsheet" type="text/css" href="customize.css" media="screen"></link>
+		<script src="arithmetic.js"></script>
+	</head>
+
+	<body>
+		<h1>OPERATIONS</h1>
+		
+		<p>
+			<label id="lblnumone">Number1:</label>
+			<input type="text" id="txtnumone" autofocus></input>
+			<label id="lblnumtwo">Number2:</label>
+			<input type="text" id="txtnuumtwo" autofocus></input>
+			
+			<button type="button" id="btnadd">+</button>
+			<button type="button" id="btnsub">-</button>
+			<button type="button" id="btnmup">*</button>
+			<button type="button" id="btndiv">/</button>
+			<button type="button" id="btnclear">Clear</button>
+		</p>
+		
+	</body>
+</html>
