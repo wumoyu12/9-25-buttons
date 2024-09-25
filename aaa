@@ -22,13 +22,14 @@ html
 			<button type="button" id="btnmup">*</button>
 			<button type="button" id="btndiv">/</button>
 			<button type="button" id="btnclear">Clear</button>
+			<label id="lblanswer">Result:</label>
+			<input type = "text" id="txtResult" autofocus></input
 		</p>
-		
-		<input type = "text" id="txtResult" autofocus></input
 		
 	</body>
 </html>
 
+javjascript
 window.addEventListener("load", addListener);
 var sum = "";
 function addListener()
