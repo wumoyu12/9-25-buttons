@@ -11,36 +11,130 @@ html
 	<body>
 		<h1>OPERATIONS</h1>
 		
-		<p>
-			<label id="lblnumone">Number1:</label>
+		<p id="firstpart">
+			<label id="lblnumone">Number 1:</label>
 			<input type="text" id="txtnumone" autofocus></input>
-			<label id="lblnumtwo">Number2:</label>
+			<label id="lblnumtwo">Number 2:</label>
 			<input type="text" id="txtnuumtwo" autofocus></input>
 			
 			<button type="button" id="btnadd">+</button>
 			<button type="button" id="btnsub">-</button>
-			<button type="button" id="btnmup">*</button>
+			<button type="button" id="btnmult">*</button>
 			<button type="button" id="btndiv">/</button>
 			<button type="button" id="btnclear">Clear</button>
 			<label id="lblanswer">Result:</label>
-			<input type = "text" id="txtResult" autofocus></input
+			<input type = "text" id="txtResult"></input>
 		</p>
 		
 	</body>
 </html>
 
-javjascript
+
 window.addEventListener("load", addListener);
-var sum = "";
+var result = "";
 function addListener()
 {
-	document.getElementByID("btnnumone").addEventListener("click",ButtonOne);
-	document.getElementByID("btnnumtwo").addEventListener("click",ButtonTwo);
+	document.get.ElementByID("txtResult").disabled = true;
+	document.get.ElementByID("btnadd").addEventListener("click", Addition);
+	document.get.ElementByID("btnsub").addEventListener("click", Subtraction);
+	document.get.ElementByID("btnmult").addEventListener("click", Multiplication);
+	document.get.ElementByID("btndiv").addEventListener("click", Division);
+	document.get.ElementByID("btnclear").addEventListener("click", Clear);
 }
+
+function Click()
+{
+	document.getElementByID("txtnumone").addEventListener("click",ButtonOne);
+	document.getElementByID("txtnumtwo").addEventListener("click",ButtonTwo);
+}
+
 function Addition()
 {
+	Click();
 	var numone = document.getElementByID("txtnumone").value;
 	var numtwo = document.getElementByID("txtnumtwo").value;
-	sum = parseInt(numone) + parseInt(numtwo);
-	document.getElementByID("lblanswer").textContent = sum;
+	if (numone == "" || numtwo == "")
+		{
+			alert("You missinng the number(s)")
+			CheckFocus();
+		}
+	else
+	{
+		result = parseInt(numone) + parseInt(numtwo);
+		document.getElementByID("txtResult").value = result;
+	}
+
+}
+
+function Subtraction()
+{
+	Click();
+	var numone = document.getElementByID("txtnumone").value;
+	var numtwo = document.getElementByID("txtnumtwo").value;
+	if (numone == "" || numtwo == "")
+		{
+			alert("You missinng the number(s)")
+			CheckFocus();
+		}
+	else
+	{
+		result = parseInt(numone) - parseInt(numtwo);
+		document.getElementByID("txtResult").value = result;
+	}
+}
+
+function Multiplication()
+{
+	Click();
+	var numone = document.getElementByID("txtnumone").value;
+	var numtwo = document.getElementByID("txtnumtwo").value;
+	if (numone == "" || numtwo == "")
+		{
+			alert("You missinng the number(s)")
+			CheckFocus();
+		}
+	else
+	{
+		result = parseInt(numone) * parseInt(numtwo);
+		document.getElementByID("txtResult").value = result;
+	}
+}
+
+function Division()
+{
+	Click();
+	var numone = document.getElementByID("txtnumone").value;
+	var numtwo = document.getElementByID("txtnumtwo").value;
+	if (numone == "" || numtwo == "")
+		{
+			alert("You missinng the number(s)")
+			CheckFocus();
+		}
+	else
+	{
+		result = parseInt(numone) / parseInt(numtwo);
+		document.getElementByID("txtResult").value = result;
+	}
+}
+
+
+function CheckFocus()
+{
+	if (numone == "")
+		{
+			document.getElementByID("txtnumone").focus();
+			
+		}
+	else
+	{
+		document.get.ElementByID("txtnumtwo").focus();
+	}
+}
+
+
+
+
+body
+{
+	font-family:Cambria;
 }
