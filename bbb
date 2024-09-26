@@ -1,0 +1,117 @@
+HTML
+
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Activity - Buttons</title>
+		<link rel="stylesheet" type="text/css" href="customize.css" media="screen"></link>
+		<script src="arithmetic.js"></script>
+	</head>
+
+	<body>
+		<h1>OPERATIONS</h1>
+		
+		<p id="firstpart">
+			<label id="lblnumone">Number 1:</label>
+			<input type="text" id="txtnumone" autofocus></input>
+			<label id="lblnumtwo">Number 2:</label>
+			<input type="text" id="txtnumtwo"></input>
+			<button type="button" id="btnadd">+</button>
+			<button type="button" id="btnsub">-</button>
+			<button type="button" id="btnmult">*</button>
+			<button type="button" id="btndiv">/</button>
+			<button type="button" id="btnclear">Clear</button>
+			<label id="lblanswer">Result:</label>
+			<input type = "text" id="txtResult"></input>
+		</p>
+		
+	</body>
+</html>
+
+window.addEventListener("load", addListener);
+var num1,num2,sum,difference,product,quotient;
+
+function addListener()
+{
+	document.getElementById("txtResult").disabled = true;
+	document.getElementById("btnadd").addEventListener("click",Addition);
+	document.getElementById("btnsub").addEventListener("click",Subtraction);
+	document.getElementById("btnmult").addEventListener("click",Multiplication);
+	document.getElementById("btndiv").addEventListener("click",Division);
+	document.getElementById("btnclear").addEventListener("click",Clear);
+}
+
+function GetNums()
+{
+	num1 = document.getElementById("txtnumone").value;
+	num2 = document.getElementById("txtnumtwo").value;
+}
+
+function Addition()
+{
+	GetNums();
+	sum = parseInt(num1) + parseInt(num2);
+	if (numone == "" || numtwo == "")
+	{
+		alert("You are missing number(s)")
+		CheckFocus();
+	}
+	document.getElementById("txtResult").value = sum;
+}
+
+
+function Subtraction()
+{
+	GetNums();
+	difference = parseInt(num1) - parseInt(num2);
+	if (numone == "" || numtwo == "")
+	{
+		alert("You are missing number(s)")
+		CheckFocus();
+	}
+	document.getElementById("txtResult").value = difference;
+}
+
+function Multiplication()
+{
+	GetNums();
+	product = parseInt(num1) * parseInt(num2);
+	if (numone == "" || numtwo == "")
+	{
+		alert("You are missing number(s)")
+		CheckFocus();
+	}
+	document.getElementById("txtResult").value = product;
+}
+
+function Division()
+{
+	GetNums();
+	quotient = parseInt(num1) / parseInt(num2);
+	if (numone == "" || numtwo == "")
+	{
+		alert("You are missing number(s)")
+		CheckFocus();
+	}
+	document.getElementById("txtResult").value = quotient;
+}
+
+function Clear()
+{
+	document.getElementById("txtnumone").value = ""
+	document.getElementById("txtnumtwo").value = ""
+	document.getElementById("txtResult").value = ""
+}
+
+function CheckFocus()
+{
+	if(numone == "")
+	{
+		document.getElementByID("txtnumone").focus();
+	}
+	else:
+	{
+		document.getElementByID("txtnumtwo").focus();
+	}
+}
