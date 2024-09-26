@@ -46,17 +46,17 @@ function GetNums()
 {
 	num1 = document.getElementById("txtnumone").value;
 	num2 = document.getElementById("txtnumtwo").value;
+	if (numone == "" || numtwo == "")
+	{
+		alert("You are missing number(s)")
+		CheckFocus();
+	}
 }
 
 function Addition()
 {
 	GetNums();
 	sum = parseInt(num1) + parseInt(num2);
-	if (numone == "" || numtwo == "")
-	{
-		alert("You are missing number(s)")
-		CheckFocus();
-	}
 	document.getElementById("txtResult").value = sum;
 }
 
@@ -65,11 +65,6 @@ function Subtraction()
 {
 	GetNums();
 	difference = parseInt(num1) - parseInt(num2);
-	if (numone == "" || numtwo == "")
-	{
-		alert("You are missing number(s)")
-		CheckFocus();
-	}
 	document.getElementById("txtResult").value = difference;
 }
 
@@ -77,11 +72,6 @@ function Multiplication()
 {
 	GetNums();
 	product = parseInt(num1) * parseInt(num2);
-	if (numone == "" || numtwo == "")
-	{
-		alert("You are missing number(s)")
-		CheckFocus();
-	}
 	document.getElementById("txtResult").value = product;
 }
 
@@ -89,11 +79,6 @@ function Division()
 {
 	GetNums();
 	quotient = parseInt(num1) / parseInt(num2);
-	if (numone == "" || numtwo == "")
-	{
-		alert("You are missing number(s)")
-		CheckFocus();
-	}
 	document.getElementById("txtResult").value = quotient;
 }
 
